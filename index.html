@@ -49,6 +49,11 @@ main {
     box-shadow: 0 6px 15px rgba(0,0,0,0.1);
     max-width: 650px;
     width: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.calculator:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
 
 /* Titels */
@@ -72,6 +77,21 @@ input[type="number"] {
     border-radius: 8px;
     border: 1px solid #ccc;
     font-size: 16px;
+}
+
+input[type="text"], input[type="email"], textarea {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+textarea {
+    height: 100px;
+    resize: vertical;
 }
 
 /* Knoppen */
@@ -153,6 +173,20 @@ button:hover {
     <button onclick="addAvgGrade()">Voeg cijfer toe</button>
     <button onclick="calculateAverage()" style="margin-top: 10px;">Bereken gemiddelde</button>
     <div class="result" id="avgResult"></div>
+</div>
+
+<!-- Contact Formulier -->
+<div class="calculator">
+    <h2>Contact</h2>
+    <form action="mailto:maxime_0183@snapchat.com" method="post" enctype="text/plain">
+        <label for="name">Naam:</label><br>
+        <input type="text" id="name" name="name" required><br>
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required><br>
+        <label for="message">Bericht:</label><br>
+        <textarea id="message" name="message" required></textarea><br>
+        <button type="submit">Verstuur</button>
+    </form>
 </div>
 
 <!-- Reclame / educatieve banner -->
